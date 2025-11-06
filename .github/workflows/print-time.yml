@@ -3,7 +3,7 @@ name: Print current time every 15 minutes
 # Run on a schedule (cron times are in UTC)
 on:
   schedule:
-    - cron: '*/15 * * * *'   # every 15 minutes
+    - cron: '*/15 * * * *'   
 
 jobs:
   print-time:
@@ -19,8 +19,4 @@ jobs:
           echo "Current date/time (UTC): $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
           echo "date output (local on runner): $(date)"
 
-      # If you ever want to support Windows runner version, use this step instead:
-      # - name: Print current date/time (Windows PowerShell)
-      #   if: runner.os == 'Windows'
-      #   run: |
-      #     pwsh -Command "Write-Output ('Current date/time (local): ' + (Get-Date).ToString('o'))"
+     
